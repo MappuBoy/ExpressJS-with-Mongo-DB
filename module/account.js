@@ -1,0 +1,32 @@
+const mongoose=require('mongoose')
+const accountSchma=new mongoose.Schema({
+    firstname:{
+        type:String,
+        required:true
+    },
+    surename:{
+        type:String,
+        required:true
+    },
+    gender:{
+        type:String,
+        required:true
+    },
+    dateofbirth:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    phonenumber:{
+        type:Number,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true
+    }
+})
+module.exports=mongoose.model('Account',accountSchma)
