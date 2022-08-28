@@ -41,24 +41,24 @@ router.put('/:id',async(req,res)=>{
         const response=await account.save()
         res.json(response)
     } catch (error) {
-       res.send(err) 
+       res.send(error) 
     }
 })
-router.delete('/id',async(res,req)=>{
+router.delete('/:id',async(req,res)=>{
         try {
             const account=await Account.findById(req.params.id)
             const response=await account.remove()
             res.json(response)
         } catch (error) {
-            res.json(err)
+            res.json(error)
         }
 })
-router.get('/:id',async(res,req)=>{
+router.get('/:id',async(req,res)=>{
     try {
         const account=await Account.findById(req.params.id)
         res.json(account)
     } catch (error) {
-        res.send("Err"+err)
+        res.send("Err"+error)
     }
 })
 module.exports=router
